@@ -1,8 +1,8 @@
-# GitHub Action: TBD
+# GitHub Action: Config Levels
 
 ## Example usage
 
-### `.github/workflow/TBD.yml`
+### `.github/workflow/config-levels.yml`
 
 ```yml
 # TBD
