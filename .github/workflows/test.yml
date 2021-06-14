@@ -30,8 +30,10 @@ jobs:
           - test/assets/a/**/conf1.yml
           - test/assets/b/**/conf1.yml
     - run: echo '${{ steps.object.outputs.result }}'
-    # - if: ${{ steps.object.outputs.test != 'b1' }}
-    #   run: 'false'
+    - if: ${{ steps.object.outputs.result != '{"test":"b1"}' }}
+      run: 'false'
+    - if: ${{ steps.object.outputs.test != 'b1' }}
+      run: 'false'
 
     - uses: ./
       id: array
@@ -39,9 +41,13 @@ jobs:
         patterns: |
           - test/assets/**/conf2.yml
     - run: echo '${{ steps.array.outputs.result }}'
+    - if: ${{ steps.object.outputs.result != '["root2","a2","b2","c2"]' }}
+      run: 'false'
 
     - uses: ./
       id: plain
       with:
         patterns: test/assets/**/file.txt
     - run: echo '${{ steps.plain.outputs.result }}'
+    - if: ${{ steps.object.outputs.result != 'root\ntestA\ntestB\n' }}
+      run: 'false'

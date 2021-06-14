@@ -12,7 +12,7 @@ inputs:
       Way to merge objects [deep, overwrite, off].
       - `deep` — merge objects deeply
       - `overwrite` — overwrite objects that are at the root
-      - `off` — use the lowest level objects
+      - `off` — use the lowest level configuration file
       Default: 'deep'.
     default: deep
   merge_array:
