@@ -50,39 +50,39 @@ Configuration files have more weight, which is lower in the list.
     <th>common.yml</th><th>dev.yml</th><th>group1/common.yml</th><th>group1/dev.yml</th><th>Result</th>
   </tr>
   <tr>
-    <td>
-<code>
+    <td valign="top">
+<pre>
 ---
 project: hello
-<code>
-    </td><td>
-<code>
+</pre>
+    </td><td valign="top">
+<pre>
 ---
 environment: dev
 logging: INFO
-<code>
-    </td><td>
-<code>
+</pre>
+    </td><td valign="top">
+<pre>
 ---
 logging: DEBUG
-<code>
-    </td><td>
-<code>
+</pre>
+    </td><td valign="top">
+<pre>
 ---
-project: Hello World
+project: World
 hosts:
-- host1
-- host2
-<code>
-    </td><td>
-<code>
+- boo
+- foo
+</pre>
+    </td><td valign="top">
+<pre>
 {
-  "project": "Hello World",
+  "project": "World",
   "environment": "dev",
   "logging": "DEBUG",
-  "hosts": ["host1", "host2"]
+  "hosts": ["boo", "foo"]
 }
-<code>
+</pre>
     </td>
   </tr>
 </table>
