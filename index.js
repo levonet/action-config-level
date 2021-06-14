@@ -1,11 +1,8 @@
 const core = require('@actions/core')
+const { run } = require('./lib/action')
 
-async function run() {
-    try {
-        core.info('TBD')
-    } catch (error) {
-        core.setFailed(error.message)
-    }
+try {
+    run(core)
+} catch (error) {
+    core.setFailed(error.message)
 }
-
-run()

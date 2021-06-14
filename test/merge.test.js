@@ -1,6 +1,5 @@
 const merge = require('../lib/merge')
 
-
 describe('test mergeLevels()', () => {
     const log = {info() {}, error() {}}
 
