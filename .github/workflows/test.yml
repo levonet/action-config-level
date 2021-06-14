@@ -41,7 +41,7 @@ jobs:
         patterns: |
           - test/assets/**/conf2.yml
     - run: echo '${{ steps.array.outputs.result }}'
-    - if: ${{ steps.object.outputs.result != '["root2","a2","b2","c2"]' }}
+    - if: ${{ steps.array.outputs.result != '["root2","a2","b2","c2"]' }}
       run: 'false'
 
     - uses: ./
@@ -49,5 +49,5 @@ jobs:
       with:
         patterns: test/assets/**/file.txt
     - run: echo '${{ steps.plain.outputs.result }}'
-    - if: ${{ steps.object.outputs.result != 'root\ntestA\ntestB\n' }}
+    - if: ${{ steps.plain.outputs.result != 'root\ntestA\ntestB\n' }}
       run: 'false'
