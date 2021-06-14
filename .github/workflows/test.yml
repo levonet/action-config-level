@@ -30,8 +30,8 @@ jobs:
           - test/assets/a/**/conf1.yml
           - test/assets/b/**/conf1.yml
     - run: echo '${{ steps.object.outputs.result }}'
-    - if: ${{ steps.object.outputs.test != 'b1' }}
-      run: 'false'
+    # - if: ${{ steps.object.outputs.test != 'b1' }}
+    #   run: 'false'
 
     - uses: ./
       id: array
