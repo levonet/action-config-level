@@ -49,5 +49,5 @@ jobs:
       with:
         patterns: test/assets/**/file.txt
     - run: echo '${{ steps.plain.outputs.result }}'
-    - if: ${{ steps.plain.outputs.result != 'root\ntestA\ntestB\n' }}
+    - if: ${{ toJSON(steps.plain.outputs.result) != 'root\ntestA\ntestB\n' }}
       run: 'false'
