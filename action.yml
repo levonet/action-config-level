@@ -28,12 +28,12 @@ inputs:
     default: concatenating
   output_properties:
     description: |
-      Output each property of the object as json.
+      Output each property of the object as JSON.
       Default: 'false'.
     default: 'false'
 outputs:
   result:
-    description: Merged configuration as json or plain text.
+    description: Merged configuration as JSON or plain text.
 runs:
   using: node12
   main: dist/index.js

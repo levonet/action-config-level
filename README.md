@@ -2,7 +2,7 @@
 
 This action is designed to create a configuration consisting of different levels of configuration files.
 
-During merging of configuration files, objects that are at higher levels are overridden by objects that are at lower levels.
+During the merging of configuration files, objects that are at higher levels are overridden by objects that are at lower levels.
 In the same way, objects and lists can be supplemented with each lower level of configuration.
 The type of merging is determined by the parameters of the action.
 
@@ -25,7 +25,7 @@ project/
   └── prod.yml
 ```
 
-Where at the level of the folder "project" the general configuration is defined.
+Whereat the level of the folder "project" the general configuration is defined.
 The `groupX` folders define a specific configuration for each group.
 
 Due to the imaginary environment variables `env.GROUP` and `env.ENV` we can get different configurations as a result of merging the contents of files.
@@ -43,7 +43,7 @@ Due to the imaginary environment variables `env.GROUP` and `env.ENV` we can get 
 - run: echo '${{ steps.config.outputs.result }}'
 ```
 
-Configuration files have more weight, which are lower in the list.
+Configuration files have more weight, which is lower in the list.
 
 <table>
   <tr>
@@ -121,7 +121,7 @@ Default: `concatenating`.
 
 ### `output_properties`
 
-Output each property of the object as json.
+Output each property of the object as JSON.
 
 Default: `false`.
 
@@ -135,7 +135,7 @@ The format is determined automatically based on file suffixes.
 
 ### `<object property>`
 
-Returns each individual property of an object in a separate output.
+Returns each property of an object in a separate output.
 Properties are returned when the `output_properties` input parameter is set to `true`.
 
 # License
