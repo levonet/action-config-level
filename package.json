@@ -1,7 +1,7 @@
 {
-  "name": "action-TBD",
-  "version": "0.0.0",
-  "description": "TBD",
+  "name": "action-config-levels",
+  "version": "0.1.0",
+  "description": "Load configuration and merge it by redefinition levels",
   "main": "dist/index.js",
   "scripts": {
     "dist": "$(npm bin)/ncc build index.js -m --license licenses.txt",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/levonet/action-TBD.git"
+    "url": "git+https://github.com/levonet/action-config-levels.git"
   },
   "keywords": [
     "GitHub",
@@ -19,11 +19,14 @@
   "author": "Pavlo Bashynskyi (levonet)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/levonet/action-TBD/issues"
+    "url": "https://github.com/levonet/action-config-levels/issues"
   },
-  "homepage": "https://github.com/levonet/action-TBD#readme",
+  "homepage": "https://github.com/levonet/action-config-levels#readme",
   "dependencies": {
-    "@actions/core": "^1.4.0"
+    "@actions/core": "^1.4.0",
+    "deepmerge": "^4.2.2",
+    "glob": "^7.1.7",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.28.6",

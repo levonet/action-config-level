@@ -1,6 +1,42 @@
 ---
-name: action-TBD
-description: TBD
+name: action-config-levels
+description: Load configuration and merge it by redefinition levels
+inputs:
+  patterns:
+    description: |
+      A list of path patterns to possible configuration files.
+      This field contains a string with a list in YAML format.
+    required: true
+  merge_object:
+    description: |
+      Way to merge objects [deep, overwrite, off].
+      - `deep` — merge objects deeply
+      - `overwrite` — overwrite objects that are at the root
+      - `off` — use the lowest level configuration file
+      Default: 'deep'.
+    default: deep
+  merge_array:
+    description: |
+      Way to merge arrays [concatenating, overwrite].
+      Also affects the type of array merge when merging objects.
+      Default: 'concatenating'.
+    default: concatenating
+  merge_plain:
+    description: |
+      Way to merge plain text [concatenating, overwrite].
+      Default: 'concatenating'.
+    default: concatenating
+  output_properties:
+    description: |
+      Output each property of the object as JSON.
+      Default: 'false'.
+    default: 'false'
+outputs:
+  result:
+    description: Merged configuration as JSON or plain text.
 runs:
   using: node12
   main: dist/index.js
+branding:
+  icon: layers
+  color: gray-dark
